@@ -1,5 +1,5 @@
 import { test } from '@playwright/test';
-import { VisualGridRunner, Eyes, Configuration, BatchInfo, BrowserType, Target } from '@applitools/eyes-playwright';
+import { VisualGridRunner, Eyes, Configuration, BatchInfo, BrowserType, DeviceName, Target } from '@applitools/eyes-playwright';
 
 test.describe.configure({ mode: 'parallel' })
 
@@ -20,6 +20,10 @@ test.describe('AppliFashion', () => {
     configuration = new Configuration();
     configuration.setBatch(batch);
     configuration.addBrowser(1200, 800, BrowserType.CHROME);
+    configuration.addBrowser(1200, 800, BrowserType.FIREFOX);
+    configuration.addBrowser(1200, 800, BrowserType.EDGE_CHROMIUM);
+    configuration.addBrowser(1200, 800, BrowserType.SAFARI);
+    configuration.addDeviceEmulation(DeviceName.iPhone_X);
   });
 
   test.beforeEach(async ({ page }) => {

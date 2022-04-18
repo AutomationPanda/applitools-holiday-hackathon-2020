@@ -19,20 +19,20 @@ npx playwright install
 You'll need an Applitools account, which you can [register for free](https://auth.applitools.com/users/register).
 Set your secret Applitools API key:
 
-```bash
+```
 export APPLITOOLS_API_KEY=<your-key>
 ```
 
 Then, run the tests:
 
-```bash
+```
 npm test
 ```
 
 This command runs tests against Chromium.
 You can explicitly run tests against other browsers like this:
 
-```bash
+```
 npx playwright test --project chromium
 npx playwright test --project firefox
 npx playwright test --project webkit

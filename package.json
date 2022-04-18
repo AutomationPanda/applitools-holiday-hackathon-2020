@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --project chromium"
+    "test": "npm run test:prod",
+    "test:main": "APPLIFASHION_VERSION=main npx playwright test --project chromium",
+    "test:dev": "APPLIFASHION_VERSION=dev npx playwright test --project chromium",
+    "test:prod": "APPLIFASHION_VERSION=prod npx playwright test --project chromium"
   },
   "keywords": [],
   "author": "",

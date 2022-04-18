@@ -1,21 +1,19 @@
 import { test } from '@playwright/test';
 import { Eyes, Target } from '@applitools/eyes-playwright';
-import { buildEyes } from './hooks';
+import { buildEyes, getAppliFashionUrl } from './hooks';
 
 test.describe('AppliFashion', () => {
-  const URL_MAIN = 'https://demo.applitools.com/tlcHackathonMasterV1.html';
-  const URL_DEV = 'https://demo.applitools.com/tlchackathondev';
-  const URL_PROD = 'https://demo.applitools.com/tlcHackathonMasterV2.html';
-
   let eyes: Eyes;
+  let url: string;
+
+  test.beforeAll(async () => {
+    url = getAppliFashionUrl();
+  });
   
   test.beforeEach(async ({ page }) => {
     eyes = buildEyes();
-
     await page.setViewportSize({width: 1600, height: 1200});
-    // await page.goto(URL_MAIN);
-    // await page.goto(URL_DEV);
-    await page.goto(URL_PROD);
+    await page.goto(url);
   });
   
   test('should load the main page', async ({ page }) => {

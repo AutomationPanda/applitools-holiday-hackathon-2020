@@ -8,7 +8,7 @@ It is a TypeScript project that uses Playwright for testing.
 
 Install the dependencies:
 
-```bash
+```
 npm install
 npx playwright install
 ```

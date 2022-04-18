@@ -1,0 +1,16 @@
+{
+  "name": "applitools-holiday-hackathon-2020",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test --project chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@applitools/eyes-playwright": "^1.11.2",
+    "@playwright/test": "^1.21.0"
+  }
+}

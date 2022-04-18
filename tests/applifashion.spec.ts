@@ -8,20 +8,23 @@ test.describe('AppliFashion', () => {
   const URL_DEV = 'https://demo.applitools.com/tlchackathondev';
   const URL_PROD = 'https://demo.applitools.com/tlcHackathonMasterV2.html';
 
-  let eyes: Eyes;
   let runner: VisualGridRunner;
+  let batch: BatchInfo;
+  let configuration: Configuration;
+  let eyes: Eyes;
   
   test.beforeAll(async () => {
-    const configuration = new Configuration();
-    configuration.setBatch(new BatchInfo({name: 'AppliFashion Tests', id: 'applifashion'}));
-    configuration.addBrowser(1200, 800, BrowserType.CHROME);
-
     runner = new VisualGridRunner({ testConcurrency: 5 });
-    eyes = new Eyes(runner);
-    eyes.setConfiguration(configuration);
+    batch = new BatchInfo({name: 'AppliFashion Tests', id: 'applifashion'});
+
+    configuration = new Configuration();
+    configuration.setBatch(batch);
+    configuration.addBrowser(1200, 800, BrowserType.CHROME);
   });
 
   test.beforeEach(async ({ page }) => {
+    eyes = new Eyes(runner, configuration);
+
     await page.setViewportSize({width: 1600, height: 1200});
     // await page.goto(URL_MAIN);
     // await page.goto(URL_DEV);

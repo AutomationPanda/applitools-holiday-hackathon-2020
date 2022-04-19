@@ -6,7 +6,7 @@ export let Batch: BatchInfo;
 export let Config: Configuration;
 
 export function buildEyes() {
-    return new Eyes(Runner, Config);
+  return new Eyes(Runner, Config);
 }
 
 export function getAppliFashionUrl() {

@@ -23,6 +23,18 @@ Set your secret Applitools API key:
 export APPLITOOLS_API_KEY=<your-key>
 ```
 
+Then, you'll need to set an Applitools batch ID.
+Since these Playwright tests will run in parallel,
+they need to have a common batch ID injected into them:
+
+```
+export APPLITOOLS_BATCH_ID=`uuidgen` 
+```
+
+You can use any type of string-based ID.
+It is recommended to generate a fresh ID for every batch.
+(Commands will be different for Windows.)
+
 Then, run the tests:
 
 ```

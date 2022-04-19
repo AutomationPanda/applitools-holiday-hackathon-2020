@@ -35,7 +35,7 @@ export function getAppliFashionUrl() {
 
 test.beforeAll(async () => {
   Runner = new VisualGridRunner({ testConcurrency: 5 });
-  Batch = new BatchInfo({name: 'AppliFashion Tests', id: 'applifashion'});
+  Batch = new BatchInfo({name: 'AppliFashion Tests'});
 
   Config = new Configuration();
   Config.setBatch(Batch);
